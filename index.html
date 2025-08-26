@@ -70,36 +70,35 @@
   <!-- QUIZ -->
   <section id="quiz">
     <h2>📝 Quiz</h2>
-    <p id="quiz-question"></p>
-    <div id="quiz-options"></div>
-    <p id="quiz-feedback"></p>
-    <button onclick="nextQuestion()">Next Question</button>
+    <div id="quiz-container">
+      <p id="quiz-question"></p>
+      <div id="quiz-options"></div>
+      <button id="next-btn">Next Question</button>
+    </div>
   </section>
 
   <!-- CIRCUIT EXPLORER -->
- <!-- CIRCUIT EXPLORER -->
-<section id="explorer">
-  <h2>⚡ Circuit Explorer</h2>
-  <p>Drag and drop components to build a circuit. Current is auto-calculated for resistors in series with a 10V battery.</p>
-  
-  <div id="toolbox">
-    <img src="images/battery.png" class="draggable" draggable="true" data-type="battery" title="Battery">
-    <img src="images/resistor.png" class="draggable" draggable="true" data-type="resistor" title="Resistor">
-    <img src="images/capacitor.png" class="draggable" draggable="true" data-type="capacitor" title="Capacitor">
-    <img src="images/inductor.png" class="draggable" draggable="true" data-type="inductor" title="Inductor">
-    <img src="images/diode.png" class="draggable" draggable="true" data-type="diode" title="Diode">
-    <img src="images/led.png" class="draggable" draggable="true" data-type="led" title="LED">
-    <img src="images/transistor.png" class="draggable" draggable="true" data-type="transistor" title="Transistor">
-    <img src="images/switch.png" class="draggable" draggable="true" data-type="switch" title="Switch">
-    <img src="images/ground.png" class="draggable" draggable="true" data-type="ground" title="Ground">
-  </div>
+  <section id="explorer">
+    <h2>⚡ Circuit Explorer</h2>
+    <p>Drag and drop components to build a circuit. Current is auto-calculated for resistors in series with a 10V battery.</p>
+    
+    <div id="toolbox">
+      <img src="images/battery.png" class="draggable" draggable="true" data-type="battery" title="Battery">
+      <img src="images/resistor.png" class="draggable" draggable="true" data-type="resistor" title="Resistor">
+      <img src="images/capacitor.png" class="draggable" draggable="true" data-type="capacitor" title="Capacitor">
+      <img src="images/inductor.png" class="draggable" draggable="true" data-type="inductor" title="Inductor">
+      <img src="images/diode.png" class="draggable" draggable="true" data-type="diode" title="Diode">
+      <img src="images/led.png" class="draggable" draggable="true" data-type="led" title="LED">
+      <img src="images/transistor.png" class="draggable" draggable="true" data-type="transistor" title="Transistor">
+      <img src="images/switch.png" class="draggable" draggable="true" data-type="switch" title="Switch">
+      <img src="images/ground.png" class="draggable" draggable="true" data-type="ground" title="Ground">
+    </div>
 
-  <div id="canvas" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="canvas" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-  <p id="explorer-output"></p>
-  <button onclick="analyzeCircuit()">Analyze Circuit</button>
-</section>
-
+    <p id="explorer-output"></p>
+    <button onclick="analyzeCircuit()">Analyze Circuit</button>
+  </section>
 
   <footer>
     <p>Made for students of Electronics Engineering ⚡</p>
