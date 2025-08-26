@@ -1,0 +1,29 @@
+body { font-family: Arial, sans-serif; margin:0; background:#f8f9fa; color:#333; }
+header { background:#222; color:#fff; padding:1em; text-align:center; }
+nav a { margin:0 10px; color:#ffcc00; text-decoration:none; font-weight:bold; }
+section { padding:2em; }
+.card { background:white; padding:1em; margin:1em 0; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+
+/* Components */
+.component-grid { display:flex; gap:1em; }
+.component { background:#eee; padding:1em; border-radius:6px; cursor:pointer; text-align:center; flex:1; }
+#component-detail { margin-top:1em; padding:1em; background:white; border-radius:6px; }
+
+/* Flashcards */
+.flashcard { width:150px; height:100px; margin:10px; perspective:1000px; display:inline-block; cursor:pointer; position:relative; }
+.flashcard div { position:absolute; width:100%; height:100%; backface-visibility:hidden; border:2px solid #444; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:bold; }
+.flashcard .front { background:#ffcc00; }
+.flashcard .back { background:#4caf50; transform:rotateY(180deg); }
+.flashcard.flipped .front { transform:rotateY(180deg); }
+.flashcard.flipped .back { transform:rotateY(0deg); }
+
+/* Quiz */
+#quiz-options button { margin:5px; padding:8px 12px; border:none; background:#007bff; color:white; border-radius:5px; cursor:pointer; }
+#quiz-options button:hover { background:#0056b3; }
+
+/* Explorer */
+#toolbox { margin:1em 0; }
+#toolbox img { width:60px; margin-right:10px; cursor:grab; }
+#canvas { width:100%; height:300px; border:2px dashed #ccc; position:relative; background:white; }
+#canvas img { width:60px; position:absolute; cursor:move; }
+footer { background:#222; color:white; text-align:center; padding:1em; }
