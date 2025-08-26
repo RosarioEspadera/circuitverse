@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CircuitVerse – Explore Electronics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>CircuitVerse</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#lessons">Lessons</a>
+      <a href="#components">Components</a>
+      <a href="#flashcards">Flashcards</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#explorer">Circuit Explorer</a>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section id="home">
+    <h2>Welcome</h2>
+    <p>Explore Electronics Engineering with interactive lessons, flashcards, quizzes, and a drag-and-drop Circuit Explorer!</p>
+  </section>
+
+  <!-- LESSONS -->
+  <section id="lessons">
+    <h2>📚 Lessons</h2>
+    <div class="card">
+      <h3>Lesson 1: Voltage, Current, Resistance</h3>
+      <p>Understand the three basics of circuits and Ohm’s Law.</p>
+      <ul>
+        <li>Voltage = electrical potential difference (V)</li>
+        <li>Current = flow of charge (A)</li>
+        <li>Resistance = opposition to current (Ω)</li>
+        <li>Ohm’s Law: V = I × R</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Lesson 2: Circuit Components</h3>
+      <p>Resistors, capacitors, inductors, diodes, transistors – the building blocks of electronics.</p>
+    </div>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section id="components">
+    <h2>🔌 Components Library</h2>
+    <div class="component-grid">
+      <div class="component" onclick="showComponent('Resistor','Limits current, follows Ohm’s law','images/resistor.png')">Resistor</div>
+      <div class="component" onclick="showComponent('Capacitor','Stores energy in electric field','images/capacitor.png')">Capacitor</div>
+      <div class="component" onclick="showComponent('Battery','Provides voltage','images/battery.png')">Battery</div>
+    </div>
+    <div id="component-detail"></div>
+  </section>
+
+  <!-- FLASHCARDS -->
+  <section id="flashcards">
+    <h2>🧠 Flashcards</h2>
+    <div class="flashcard" onclick="flipCard(this)">
+      <div class="front">Ohm’s Law</div>
+      <div class="back">V = I × R</div>
+    </div>
+    <div class="flashcard" onclick="flipCard(this)">
+      <div class="front">Power Formula</div>
+      <div class="back">P = V × I</div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz">
+    <h2>📝 Quiz</h2>
+    <p id="quiz-question"></p>
+    <div id="quiz-options"></div>
+    <p id="quiz-feedback"></p>
+    <button onclick="nextQuestion()">Next Question</button>
+  </section>
+
+  <!-- CIRCUIT EXPLORER -->
+ <!-- CIRCUIT EXPLORER -->
+<section id="explorer">
+  <h2>⚡ Circuit Explorer</h2>
+  <p>Drag and drop components to build a circuit. Current is auto-calculated for resistors in series with a 10V battery.</p>
+  
+  <div id="toolbox">
+    <img src="images/battery.png" class="draggable" draggable="true" data-type="battery" title="Battery">
+    <img src="images/resistor.png" class="draggable" draggable="true" data-type="resistor" title="Resistor">
+    <img src="images/capacitor.png" class="draggable" draggable="true" data-type="capacitor" title="Capacitor">
+    <img src="images/inductor.png" class="draggable" draggable="true" data-type="inductor" title="Inductor">
+    <img src="images/diode.png" class="draggable" draggable="true" data-type="diode" title="Diode">
+    <img src="images/led.png" class="draggable" draggable="true" data-type="led" title="LED">
+    <img src="images/transistor.png" class="draggable" draggable="true" data-type="transistor" title="Transistor">
+    <img src="images/switch.png" class="draggable" draggable="true" data-type="switch" title="Switch">
+    <img src="images/ground.png" class="draggable" draggable="true" data-type="ground" title="Ground">
+  </div>
+
+  <div id="canvas" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+  <p id="explorer-output"></p>
+  <button onclick="analyzeCircuit()">Analyze Circuit</button>
+</section>
+
+
+  <footer>
+    <p>Made for students of Electronics Engineering ⚡</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
